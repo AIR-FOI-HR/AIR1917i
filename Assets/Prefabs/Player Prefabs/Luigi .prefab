@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50871784872639420}
   - component: {fileID: 61495772438964728}
   - component: {fileID: 114740702352519470}
+  - component: {fileID: 114826444777407130}
   m_Layer: 0
   m_Name: 'Luigi '
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600740821123636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.262, y: 0.186, z: 0}
+  m_LocalPosition: {x: -0.52, y: 2.04, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +57,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 0.4
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
@@ -122,6 +123,17 @@ MonoBehaviour:
   maxVelocity: 4
   myBody: {fileID: 50871784872639420}
   anim: {fileID: 95664337826977216}
+--- !u!114 &114826444777407130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600740821123636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c07cf7be0194fbd6ad2cc0bfbabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212428206465156870
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -313,6 +313,7 @@
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudSpawner.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerBounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
