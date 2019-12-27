@@ -312,6 +312,8 @@
     <Compile Include="Assets\Scripts\Camera Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudSpawner.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\HighscoreController.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerBounds.cs" />
   </ItemGroup>
