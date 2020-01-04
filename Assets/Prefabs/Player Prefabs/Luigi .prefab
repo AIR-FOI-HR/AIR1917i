@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61495772438964728}
   - component: {fileID: 114740702352519470}
   - component: {fileID: 114826444777407130}
+  - component: {fileID: 114080112330126470}
   m_Layer: 0
   m_Name: 'Luigi '
   m_TagString: Player
@@ -108,6 +109,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114080112330126470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600740821123636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bac8ec40fb838b4cb3a2829c56bbc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: 94a6c5d4f2199e54fb7df9885245362b, type: 3}
+  lifeClip: {fileID: 8300000, guid: 1bb5e2e754a721d4f8037381001c49c1, type: 3}
 --- !u!114 &114740702352519470
 MonoBehaviour:
   m_ObjectHideFlags: 1
