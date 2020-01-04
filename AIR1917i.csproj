@@ -313,6 +313,7 @@
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Scripts\CloudSpawner.cs" />
     <Compile Include="Assets\Scripts\Collectables Scripts\CollectableScript.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\GameplayController.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\HighscoreController.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\MainMenuController.cs" />
