@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour {
         MakeSingleton();
     }
 
-   
+    private void Start()
+    {
+        InitializeVariables();
+    }
 
     void MakeSingleton()
     {
@@ -64,10 +67,38 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void InitializeVariables()
+    {
+        if (!PlayerPrefs.HasKey("Game Initialized"))
+        {
+
+            GamePreferences.SetEasyDifficultyState(1);
+            GamePreferences.SetEasyDifficultyCoinScore(0);
+            GamePreferences.SetEasyDifficultyHighScore(0);
+            
+            GamePreferences.SetMusicState(0);
+
+            PlayerPrefs.SetInt("Game Initialized", 123);
+        }
+    }
+
     public void CheckGameStatus(int score, int coinScore, int lifeScore)
     {
         if (lifeScore < 0)
         {
+            if (GamePreferences.GetEasyDifficultyState() == 1)
+            {
+
+                int highScore = GamePreferences.GetEasyDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetEasyDifficultyCoinScore();
+
+                if (highScore < score)
+                    GamePreferences.SetEasyDifficultyHighScore(score);
+
+                if (coinHighScore < coinScore)
+                    GamePreferences.SetEasyDifficultyCoinScore(coinScore);
+            }
+
             gameStartedFromMainMenu = false;
             gameRestartedAfterPlayerDied = false;
 
