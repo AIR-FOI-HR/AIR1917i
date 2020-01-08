@@ -2,16 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
+    
+    [SerializeField]
+    private Button musicBtn;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    [SerializeField]
+    private Sprite[] musicIcons;
+
+    // Use this for initialization
+    void Start () {
+        CheckToPlayTheMusic();
+    }
+
+    void CheckToPlayTheMusic()
+    {
+        if (GamePreferences.GetMusicState() == 1)
+        {
+            MusicController.instance.PlayMusic(true);
+            musicBtn.image.sprite = musicIcons[1];
+        }
+        else
+        {
+            MusicController.instance.PlayMusic(false);
+            musicBtn.image.sprite = musicIcons[0];
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -34,6 +55,17 @@ public class MainMenuController : MonoBehaviour {
 
     public void MusicButton()
     {
-       
+        if (GamePreferences.GetMusicState() == 0)
+        {
+            GamePreferences.SetMusicState(1);
+            MusicController.instance.PlayMusic(true);
+            musicBtn.image.sprite = musicIcons[1];
+        }
+        else if (GamePreferences.GetMusicState() == 1)
+        {
+            GamePreferences.SetMusicState(0);
+            MusicController.instance.PlayMusic(false);
+            musicBtn.image.sprite = musicIcons[0];
+        }
     }
 }
