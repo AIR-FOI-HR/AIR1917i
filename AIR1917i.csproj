@@ -322,6 +322,7 @@
     <Compile Include="Assets\Scripts\Joystick Scripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerBounds.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerMoveJoystick.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerScore.cs" />
   </ItemGroup>
   <ItemGroup>

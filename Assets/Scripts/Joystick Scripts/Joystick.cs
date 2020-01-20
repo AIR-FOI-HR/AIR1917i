@@ -1,16 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour {
+public class Joystick : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private PlayerMoveJoystick playerMove;
+
+    void Start()
+    {
+        playerMove = GameObject.Find("Luigi ").GetComponent<PlayerMoveJoystick>();
+    }
+
+    public void OnPointerDown(PointerEventData data)
+    {
+        if (gameObject.name == "Left")
+        {
+            playerMove.SetMoveLeft(true);
+        }
+        else
+        {
+            playerMove.SetMoveLeft(false);
+        }
+    }
+
+    public void OnPointerUp(PointerEventData data)
+    {    //kada pustis
+        playerMove.StopMoving();
+    }
+
 }
