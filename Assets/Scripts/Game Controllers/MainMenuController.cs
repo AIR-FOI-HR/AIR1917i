@@ -43,6 +43,11 @@ public class MainMenuController : MonoBehaviour {
 
     }
 
+    public void Levels()
+    {
+        SceneManager.LoadScene("Level Select");
+    }
+
     public void HighscoreMenu()
     {
         SceneManager.LoadScene("Highscore Scene");

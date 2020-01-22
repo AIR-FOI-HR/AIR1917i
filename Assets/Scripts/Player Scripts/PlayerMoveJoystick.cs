@@ -56,7 +56,7 @@ public class PlayerMoveJoystick : MonoBehaviour
             forceX = -speed;
 
             Vector3 temp = transform.localScale;
-            temp.x = -1.3f;
+            temp.x = 1.3f;
             transform.localScale = temp;
 
             anim.SetBool("Walk", true);
@@ -75,7 +75,7 @@ public class PlayerMoveJoystick : MonoBehaviour
             forceX = speed;
 
             Vector3 temp = transform.localScale;
-            temp.x = 1.3f;
+            temp.x = -1.3f;
             transform.localScale = temp;
 
             anim.SetBool("Walk", true);
