@@ -372,7 +372,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 303544404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 706852374}
+        m_MethodName: GoBackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &303544404
@@ -744,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddd3fa028bd44b438b397aaa588ffa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://www.dropbox.com/s/9h0rot7l48oz6qo/proba2.dlc?dl=1
+  url: https://www.dropbox.com/s/4i7z6pzl1lx4k3i/modularnileveli.dlc?dl=1
 --- !u!4 &706852375
 Transform:
   m_ObjectHideFlags: 0

@@ -306,6 +306,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AssetBundles.cs" />
     <Compile Include="Assets\Scripts\Background Scripts\BG.cs" />
     <Compile Include="Assets\Scripts\Background Scripts\Collectors\BGCollector.cs" />
     <Compile Include="Assets\Scripts\Background Scripts\Collectors\BGSpawner.cs" />
