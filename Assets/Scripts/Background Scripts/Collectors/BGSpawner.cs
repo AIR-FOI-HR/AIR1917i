@@ -42,7 +42,7 @@ public class BGSpawner : MonoBehaviour {
                     if (!backgrounds[i].activeInHierarchy)
                     {
                         temp.y -= height;
-                        lastY = temp.y;
+                        lastY = temp.y;      
 
                         backgrounds[i].transform.position = temp;
                         backgrounds[i].SetActive(true);

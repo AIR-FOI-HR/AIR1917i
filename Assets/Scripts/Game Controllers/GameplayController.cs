@@ -103,8 +103,11 @@ public class GameplayController : MonoBehaviour
 
     public void PauseTheGame()
     {
-        Time.timeScale = 0f;
-        pausePanel.SetActive(true);
+        if (readyButton.activeInHierarchy == false)
+        {
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
+        }       
     }
 
 

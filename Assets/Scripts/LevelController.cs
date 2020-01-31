@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class LevelController : MonoBehaviour
 {
@@ -13,15 +14,33 @@ public class LevelController : MonoBehaviour
     static AssetBundle assetBundle;
     static string[] scenes;
 
+    //za prikaz statusa mreže
+    GameObject networkStatusImage;
+    Image image;
+
+    GameObject networkStatusText;
+    Text networkText;
+
     public static LevelController instance;
 
     private void Awake()
     {
-
-        //StartCoroutine(WaitForRealSeconds(100000));
-        Debug.Log("awake method");
-        //StartCoroutine(Start());
+        networkStatusImage = GameObject.FindGameObjectWithTag("Network Status");
+        networkText = GameObject.Find("Network Text").GetComponent<Text>();
+        if (networkStatusImage != null)
+        {
+            image = networkStatusImage.GetComponent<Image>();
+            image.enabled = false; 
+           
+        }
+        if (networkText != null)
+        {
+            networkText.enabled = false;
+        }
+       
     }
+
+  
 
     public static IEnumerator WaitForRealSeconds(float time)
     {
@@ -70,50 +89,61 @@ public class LevelController : MonoBehaviour
         //      Debug.Log(Path.GetFileNameWithoutExtension(scenename));
         // }  
 
-
-
-        if (assetBundle != null)
-        {
-            assetBundle.Unload(true); //scene is unload from here
+        if (Application.internetReachability == NetworkReachability.NotReachable) {
+            GameObject networkStatusImage = GameObject.FindGameObjectWithTag("Network Status");        
+            image.enabled = true;
+            networkText.enabled = true;
         }
 
-        while (!Caching.ready)
+        else
         {
+            if (assetBundle != null)
+            {
+                assetBundle.Unload(true); //scene is unload from here
+            }
 
-            yield return null;
+            while (!Caching.ready)
+            {
+
+                yield return null;
+            }
+
+
+
+            WWW www = WWW.LoadFromCacheOrDownload(url, 1);
+            yield return www;
+
+            if (!string.IsNullOrEmpty(www.error))
+            {
+                Debug.Log(www.error);
+                yield return null;
+            }
+
+            assetBundle = www.assetBundle;
+            scenes = assetBundle.GetAllScenePaths();
+            foreach (string scenename in scenes)
+            {
+                Debug.Log(Path.GetFileNameWithoutExtension(scenename));
+            }
         }
 
-
-
-        WWW www = WWW.LoadFromCacheOrDownload(url, 1);
-        yield return www;
-
-        if (!string.IsNullOrEmpty(www.error))
-        {
-            Debug.Log(www.error);
-            yield return null;
-        }
-
-        assetBundle = www.assetBundle;
-        scenes = assetBundle.GetAllScenePaths();
-        foreach (string scenename in scenes)
-        {
-            Debug.Log(Path.GetFileNameWithoutExtension(scenename));
-        }
+        
 
     }
 
     public void PokreniLevel2()
     {
 
-        SceneManager.LoadScene(Path.GetFileNameWithoutExtension(scenes[0]));
+        if(image.enabled==false)
+           SceneManager.LoadScene(Path.GetFileNameWithoutExtension(scenes[0]));
 
     }
 
     public void PokreniLevel3()
     {
 
-        SceneManager.LoadScene(Path.GetFileNameWithoutExtension(scenes[1]));
+        if(image.enabled==false)
+            SceneManager.LoadScene(Path.GetFileNameWithoutExtension(scenes[1]));
 
     }
 
