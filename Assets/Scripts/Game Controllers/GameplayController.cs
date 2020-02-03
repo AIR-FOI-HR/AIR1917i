@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameplayController : MonoBehaviour {
+public class GameplayController : MonoBehaviour
+{
 
     public static GameplayController instance;
 
@@ -62,6 +63,29 @@ public class GameplayController : MonoBehaviour {
         SceneManager.LoadScene("Level One");
     }
 
+    //novo za 2 i 3 level 
+    public void PlayerDiedRestartTheGameLevel2()
+    {
+        StartCoroutine(PlayerDiedRestardL2());
+    }
+
+    IEnumerator PlayerDiedRestardL2()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void PlayerDiedRestartTheGameLevel3()
+    {
+        StartCoroutine(PlayerDiedRestardL3());
+    }
+
+    IEnumerator PlayerDiedRestardL3()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Level 3");
+    }
+
     public void SetScore(int score)
     {
         scoreText.text = "x" + score;
@@ -79,8 +103,11 @@ public class GameplayController : MonoBehaviour {
 
     public void PauseTheGame()
     {
-        Time.timeScale = 0f;
-        pausePanel.SetActive(true);
+        if (readyButton.activeInHierarchy == false)
+        {
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
+        }       
     }
 
 

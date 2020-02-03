@@ -10,10 +10,15 @@ public class CloudSpawner : MonoBehaviour {
 
     private float distanceBetweenClouds = 3f;
 
+    //za definiranje granica ekrana
     private float minX, maxX;
 
+
+    //za definiranje gdje je kreiran zadnji oblak odnosno y kordinata
     private float lastCloudPositionY;
 
+
+    //za definiranje pozicije oblaka odnosno svaki oblak mora biti lijevo-desno
     private float controlX;
 
     [SerializeField]

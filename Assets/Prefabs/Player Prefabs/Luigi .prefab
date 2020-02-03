@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 95664337826977216}
   - component: {fileID: 50871784872639420}
   - component: {fileID: 61495772438964728}
-  - component: {fileID: 114740702352519470}
   - component: {fileID: 114826444777407130}
   - component: {fileID: 114080112330126470}
+  - component: {fileID: 114907178619139408}
   m_Layer: 0
   m_Name: 'Luigi '
   m_TagString: Player
@@ -122,21 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinClip: {fileID: 8300000, guid: 94a6c5d4f2199e54fb7df9885245362b, type: 3}
   lifeClip: {fileID: 8300000, guid: 1bb5e2e754a721d4f8037381001c49c1, type: 3}
---- !u!114 &114740702352519470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600740821123636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbb6faf5b9ffbb4f8bf6477b2d2c7f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  maxVelocity: 4
-  myBody: {fileID: 50871784872639420}
-  anim: {fileID: 95664337826977216}
 --- !u!114 &114826444777407130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea34c07cf7be0194fbd6ad2cc0bfbabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114907178619139408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600740821123636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4060ede6b43f844b15e57110a5a0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  maxVelocity: 4
 --- !u!212 &212428206465156870
 SpriteRenderer:
   m_ObjectHideFlags: 1
